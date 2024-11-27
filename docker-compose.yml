@@ -17,7 +17,7 @@ services:
     tmpfs:
       - /tmp/raxon/org
     ports:
-      - "80006:8006"
+      - "8006:8006"
     networks:
       - raxon-org-network
     devices:
