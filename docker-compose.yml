@@ -42,6 +42,12 @@ volumes:
       type: none
       o: bind
       device: /mnt/Disk2
+  cdrom:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /dev/cdrom
 networks:
   raxon-org-network:
     driver: bridge
