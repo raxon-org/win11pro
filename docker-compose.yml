@@ -4,6 +4,10 @@ services:
     image: dockurr/windows
     environment:
       VERSION: 11
+      USERNAME: "bill"
+      PASSWORD: "gates"
+      REGION: "en-US"
+      KEYBOARD: "en-US"
     mem_limit: 16g
     restart: always
     build:
@@ -22,6 +26,7 @@ services:
       - raxon-org-network
     devices:
       - /dev/kvm
+      - /dev/cdrom
     cap_add:
       - NET_ADMIN
     stop_grace_period: 2m
