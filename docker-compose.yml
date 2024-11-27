@@ -18,7 +18,7 @@ services:
       - .:/Application
       - mount:/mnt/Vps3/Mount
       - mount2:/mnt/Disk2
-      - cdrom:/dev/cdrom
+      - cdrom:/mnt/Dvd
     tmpfs:
       - /tmp/raxon/org
     ports:
@@ -48,7 +48,7 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /dev/cdrom
+      device: /mnt/Dvd
 networks:
   raxon-org-network:
     driver: bridge
