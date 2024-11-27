@@ -16,7 +16,6 @@ services:
       - mount2:/mnt/Disk2
     tmpfs:
       - /tmp/raxon/org
-    command: ['/usr/bin/init']
     ports:
       - "80006:8006"
     networks:
