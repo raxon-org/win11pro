@@ -19,8 +19,6 @@ services:
     command: ['/usr/bin/init']
     ports:
       - "80006:8006"
-      - "3389:3389/tcp"
-      - "3389:3389/udp"
     networks:
       - raxon-org-network
     devices:
