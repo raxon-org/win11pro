@@ -1,0 +1,46 @@
+services:
+  vps2_core:
+    container_name: windows-11-pro
+    image: dockurr/windows
+    environment:
+      VERSION: 11
+    mem_limit: 16g
+    restart: always
+    build:
+      dockerfile: ./Docker/Dockerfile
+      context: .
+    working_dir: /Application
+    volumes:
+      - .:/Application
+      - mount:/mnt/Vps3/Mount
+      - mount2:/mnt/Disk2
+    tmpfs:
+      - /tmp/raxon/org
+    command: ['/usr/bin/init']
+    ports:
+      - "80006:8006"
+      - "3389:3389/tcp"
+      - "3389:3389/udp"
+    networks:
+      - raxon-org-network
+    devices:
+      - /dev/kvm
+    cap_add:
+      - NET_ADMIN
+    stop_grace_period: 2m
+volumes:
+  mount:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /mnt/Vps3/Mount
+  mount2:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /mnt/Disk2
+networks:
+  raxon-org-network:
+    driver: bridge
