@@ -18,7 +18,6 @@ services:
       - .:/Application
       - mount:/mnt/Vps3/Mount
       - mount2:/mnt/Disk2
-      - /dev/cdrom:/mnt/Dvd:ro
     tmpfs:
       - /tmp/raxon/org
     ports:
