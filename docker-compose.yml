@@ -18,7 +18,7 @@ services:
       - .:/Application
       - mount:/mnt/Vps3/Mount
       - mount2:/mnt/Disk2
-      - cdrom:/mnt/Dvd
+      - /dev/cdrom:/mnt/Dvd:ro
     tmpfs:
       - /tmp/raxon/org
     ports:
@@ -30,6 +30,9 @@ services:
     cap_add:
       - NET_ADMIN
     stop_grace_period: 2m
+    stdin_open: true
+    tty: true
+
 volumes:
   mount:
     driver: local
