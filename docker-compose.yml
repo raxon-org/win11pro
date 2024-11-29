@@ -27,11 +27,11 @@ services:
       - raxon-org-network
     devices:
       - /dev/kvm
+      - /dev/cdrom:/dev/cdrom
     cap_add:
       - NET_ADMIN
+      - SYS_ADMIN
     stop_grace_period: 2m
-    stdin_open: true
-    tty: true
 
 volumes:
   mount:
