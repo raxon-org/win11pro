@@ -10,4 +10,6 @@ RUN cp /etc/pulse/daemon.conf /etc/pulse/daemon.conf.bak
 RUN cp ./Configuration/pulseaudio/default.pa /etc/pulse/default.pa
 
 ENV PULSE_SERVER=unix:/run/user/1000/pulse/native
-RUN mkdir -p /mnt/Cdrom  && mount /dev/cdrom /mnt/Cdrom && chmod 777 /mnt/Cdrom
+RUN mkdir -p /mnt/Cdrom
+RUN chmod 777 /mnt/Cdrom
+RUN mount /dev/cdrom /mnt/Cdrom
